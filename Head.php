@@ -61,6 +61,7 @@ if(isset ($_SESSION['user_status']))
 @session_start();
 if(isset ($_SESSION['user_id']))
 {
+	echo '<li><a href="Mplaylist.php">Your Playlist</a></li>';
 	echo '<li><a href="Mlogout.php">Log out</a></li>';
 }
 else
