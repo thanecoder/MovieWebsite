@@ -41,10 +41,14 @@ function validate()
 		alert("Please fill all the fields.");
 		return false;
 	}
-	if((str4 == ""&& str5 == "") && (str6 == "" && str7 == ""))
+	else if((str4 == ""&& str5 == "") && (str6 == "" && str7 == ""))
 	{
 		alert("Please fill all the fields.");
 		return false;
+	}
+	else
+	{
+		return true;
 	}
 }
 	</script>
