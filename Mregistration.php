@@ -25,7 +25,12 @@ function validate1()
 	var str2=document.getElementById('email').value;
 	var str3=document.getElementById('cpass1').value;
 	var str4=document.getElementById('cpass2').value;
-	if((str1 == "" && str2 == "" ) && (str3 == "" && str4 == ""))
+	if(str1 == "" && str2 == "")
+	{
+		alert("Please fill all the fields.");
+		return false;
+	}
+	else if(str3 == "" && str4 == "")
 	{
 		alert("Please fill all the fields.");
 		return false;
