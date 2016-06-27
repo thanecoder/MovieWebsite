@@ -89,33 +89,33 @@ function visible(id)
 {
 	if(id=='poster')
 	{document.getElementById('trailer').style.display='block';}
-	if(id=='showimg2')
+	if(id=='showimg1')
+	{document.getElementById('showdiv1').style.display='block';}
+if(id=='showimg2')
 	{document.getElementById('showdiv2').style.display='block';}
 if(id=='showimg3')
 	{document.getElementById('showdiv3').style.display='block';}
-if(id=='showimg4')
-	{document.getElementById('showdiv4').style.display='block';}
+if(id=='showdiv1')
+	{document.getElementById('showdiv1').style.display='block';}
 if(id=='showdiv2')
 	{document.getElementById('showdiv2').style.display='block';}
 if(id=='showdiv3')
 	{document.getElementById('showdiv3').style.display='block';}
-if(id=='showdiv4')
-	{document.getElementById('showdiv4').style.display='block';}
 }
 function invisible(id)
 {
-	if(id=='showdiv2')
+	if(id=='showdiv1')
+	{document.getElementById('showdiv1').style.display='none';}
+    if(id=='showdiv2')
 	{document.getElementById('showdiv2').style.display='none';}
     if(id=='showdiv3')
 	{document.getElementById('showdiv3').style.display='none';}
-    if(id=='showdiv4')
-	{document.getElementById('showdiv4').style.display='none';}
-	if(id=='showimg2')
+	if(id=='showimg1')
+	{document.getElementById('showdiv1').style.display='none';}
+    if(id=='showimg2')
 	{document.getElementById('showdiv2').style.display='none';}
     if(id=='showimg3')
 	{document.getElementById('showdiv3').style.display='none';}
-    if(id=='showimg4')
-	{document.getElementById('showdiv4').style.display='none';}
 }
 </script>
 </head>
@@ -170,16 +170,31 @@ QUANTITY:<input type="number" id="quantity" size="30" value="1" style="border:no
 <div style="float:left;">
 <B>REVIEWS:</B>
 <?php
-	echo "<input type='hidden' id='pid' value='".$row['p_id']."'/>
-    <table><tr><td>NAME:</td><td><input type='text' id='uname' /></td></tr>
-	<tr><td>PRODUCT:</td><td><input type='text' id='pname' value='".$row['p_name']."' readonly /></td></tr>
+	echo "
+    <table>
+	<tr><td></td></tr>
+	<tr><td></td></tr>
+	<tr><td><input type='hidden' id='pid' value='".$row['p_id']."'></td></tr>
+	<tr><td></td></tr>
+	<tr><td></td></tr>
+	<tr><td>NAME:</td><td><input type='text' id='uname'></td></tr>
+	<tr><td></td></tr>
+	<tr><td></td></tr>
+	<tr><td>MOVIE:</td><td><input type='text' id='pname' value='".$row['p_name']."' readonly ></td></tr>
+	<tr><td></td></tr>
+	<tr><td></td></tr>
 	<tr><td>REVIEW:</td><td><textarea rows='2' cols='50' id='review'></textarea></td></tr>
-	</table>
-    <input type='button' value='Submit review' onclick=add1()>";
+	<tr><td></td></tr>
+	<tr><td></td></tr>
+	<tr><td></td></tr>
+	</table>";
+    echo "<input type='button' value='Submit review' onclick=add1()>";
 ?>
 <span id="text3" style="width:100;height:100;"></span>
+<br><br>
 <?php include_once("Mreviewed.php"); ?>
 </div>
+<div style="clear:both;width:1000px;height:20px;float:left"></div>
 <div style="clear:both;width:1000px;height:40px;float:left">SIMILAR</div>
 <div style="float:left;">
 <?php
@@ -198,9 +213,9 @@ $row=@mysqli_fetch_array($result);
 $genre=$row['genre'];
 $sql="select * from movie where genre='$genre'";
 $result=mysqli_query($conn,$sql);
-$rowcount=mysqli_num_rows($result);
-for($i=2;$i<=4;$i++)
+for($i=1;$i<=3;$i++)
 {
+	mysqli_data_seek($result,$i);
 	$row=mysqli_fetch_array($result);
 	$n='UPLOADING/'.$row['p_name'].'.jpg';
 	$s='showimg'.$i;
@@ -208,6 +223,7 @@ for($i=2;$i<=4;$i++)
     echo '<img id="'.$s.'" src="'.$n.'" onmousemove="visible(this.id)" onmouseout="invisible(this.id)" style="width:300px;height:300px;float:left;"/>
     <span id="'.$d.'" onmouseover="visible(this.id)" onmouseout="invisible(this.id)" style="width:300px;height:300px;display:none;float:left;">NAME:'.$row['p_name'].'<br>Description:'.$row['description'].'<br>Genre:'.$row['genre'].'<br>
     <a id="descp" href="Moviedescp.php?id='.$row['p_id'].'"><img src="monitor.png" align="middle" style="width:25px;height:25px;" />&nbspSee description and reviews</a><br><br></span>';
+	echo '<div style="width:30px;height:300px;float:left;"></div>';
 }
 ?>
 </div>
