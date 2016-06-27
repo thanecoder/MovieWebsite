@@ -86,6 +86,7 @@ if(isset ($_SESSION['user_status']))
 	}
 	else if($rowcount==0)
 	{
+		echo "<h4>Cart is empty</h4>";
 		echo "<br><button id='payment' onclick='link1()'>Catalogue</button>";
 	}
 }
