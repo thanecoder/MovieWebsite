@@ -9,14 +9,14 @@ function confirm()
 	if((str1 == str2) && (str1 != "" && str2 != ""))
 	{
 		var ans="confirmed";
-		document.getElementById('span').innerHTML=ans;
+		document.getElementById('span1').innerHTML=ans;
 		document.getElementById('submit').style.display='block';
 	}
 	else
 	{
 		document.getElementById('cpass2').value="";
 		var ans="passwords do not match";
-		document.getElementById('span').innerHTML=ans;
+		document.getElementById('span1').innerHTML=ans;
 	}
 }
 function validate1()
@@ -83,7 +83,7 @@ function validate1()
 <tr><td>PASSWORD:</td></tr>
 <tr><td colspan="2"><input size="20" id="cpass1" name="cpass1" type="password"></tr></td>
 <tr><td>CONFIRM PASSWORD:</td></tr>
-<tr><td><input size="20" id="cpass2" type="password" onblur="confirm()"><td><span id="span"></span></tr></td>
+<tr><td><input size="20" id="cpass2" type="password" onblur="confirm()"><td><span id="span1"></span></tr></td>
 <tr><td><input id="submit" type="submit" style="display:none;"></tr></td>
 </table>
 </form>
