@@ -1,4 +1,5 @@
 <head>
+<title>MovieShop</title>
 <style>
 #button
 {
@@ -39,9 +40,11 @@
 }
 #page
 {
-	background-color:white;
-	color:black;
+	background-color:1f1f1f;
+	color:white;
+	font-family:Arial;
 	border:none;
+	border-radius:5px;
 	text-align:center;
 	text-decoration:none;
 	display: inline-block;
@@ -49,8 +52,9 @@
 }
 #page:active,#page:hover
 {
-	background-color:green;
+	background-color:#483D8B;
 	color:white;
+	font-family:Arial;
 	border:none;
 	text-align:center;
 	text-decoration:none;
@@ -80,18 +84,18 @@
 #product
 {
 	float:left;
-	width:700px;
-	height:200px;
-	border:1px solid grey;
-	box-shadow:5px 6px 6px grey;
-	font-family:Georgia
+	width:71.5%;
+	height:280px;
+	border:none;
+	box-shadow:3px 3px 3px white;
+	font-family:Georgia;
 }
 </style>
 </head>
-<body>
+<body style="overflow-x:hidden;background-color:#1f1f1f">
 <?php
 include_once('Head.php');
- 
+echo "<br><br>"; 
 if(isset($_GET['page']))
 {
 	$page=$_GET['page'];
@@ -121,19 +125,19 @@ if($result==0)
 	{
 		die("Could not fetch the data" . mysql_error());
 	}
-	echo '<br><br><br><div style="float:left;width:1000px;height:20px"><br>';
+	echo '<br><br><br><div style="float:left;width:1500px;height:20px;color:white;"><br>';
 while($row = mysql_fetch_array($result))
 	{
 	$n='UPLOADING/'.$row['p_name'].'.jpg';	
-	echo "<img src='".$n."' style='float:left;width:200px;height:200px;box-shadow:5px 5px 5px grey;'><div style='width:30px;height:200px;border:0px;float:left;'></div>
-	<div id='product'>NAME:".$row['p_name']."<br>COST:".$row['price']."<br>GENRE:".$row['genre']."<br><br><br><br>
+	echo "<img src='".$n."' style='float:left;width:230px;height:280px;box-shadow:5px 5px 5px white;'><div style='width:30px;height:280px;border:0px;float:left;'></div>
+	<div id='product'>NAME: ".$row['p_name']."<br><br>COST: Rs.".$row['price']."<br><br>GENRE: ".$row['genre']."<br><br>RATINGS: ".$row['ratings']."/5<br><br><br>
 	<a id='descp' href='Moviedescp.php?id=".$row['p_id']."'><img src='monitor.png' align='middle' style='width:25px;height:25px;' />&nbspSee description and reviews</a><br></div>";
-	echo '<br><div style="float:left;width:1000px;height:20px"><br>';
+	echo '<br><div style="float:left;width:1500px;height:60px"><br><br><br><br>';
 	};		
  ?>
  <br>
  <br>
-<div style="width:1200px;height:50px;text-align:center;">
+<div style="width:1500px;height:50px;text-align:center;">
 <?php
 if(!isset($_GET['page']))
 {
@@ -154,13 +158,13 @@ $result=mysql_query($sql,$con);
 $total_records =@mysql_num_rows($result);
 $total_pages = ceil($total_records / $num_per_page); 
 if($page!=1)
-{echo "  <a id='page' href='Moviecatalogue.php?page=" . ($page-1) . "'>Prev</a>  ";}
+{echo "  <a id='page' href='Moviecatalogue.php?page=" . ($page-1) . "'><img src='previous.png' align='middle' style='width:25px;height:25px;' /></a>  ";}
 $i=1;
 for($i=1;$i<=$total_pages;$i++)
 {
 	if($i==$page)
 	{
-		echo "<b>$page</b>"; 
+		echo "<b style='color:#ffcc00;font-size:24px;'>$page </b>"; 
 	}
 	else
 	{
@@ -169,7 +173,7 @@ for($i=1;$i<=$total_pages;$i++)
 	}
 }
 if(($page)!=($total_pages))
-{echo "  <a id='page' href='Moviecatalogue.php?page=" . ($page+1) . "'>Next</a>  ";}
+{echo "  <a id='page' href='Moviecatalogue.php?page=" . ($page+1) . "'><img src='next.png' align='middle' style='width:25px;height:25px;' /></a>  ";}
 ?>
 </div>
 
