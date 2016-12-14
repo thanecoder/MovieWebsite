@@ -1,4 +1,5 @@
 <html>
+<title>Payment Portal</title>
 <style>
 #pay,#reset
 {
@@ -27,34 +28,44 @@
 			alert("Card number only 16 digits.Please enter valid card number.");
 		}
 	}
-function validate()
-{
-	var str1=document.getElementById('cname').value;
-	var str2=document.getElementById('ctype').value;
-	var str3=document.getElementById('cnum').value;
-	var str4=document.getElementById('cvv').value;
-	var str5=document.getElementById('edate1').value;
-	var str6=document.getElementById('edate2').value;
-	var str7=document.getElementById('cost').value;
-	if(str1 == "" && (str2 == ""&& str3 == ""))
+	function validate()
 	{
-		alert("Please fill all the fields.");
-		return false;
+		var str1=document.getElementById('cname').value;
+		var str2=document.getElementById('ctype').value;
+		var str3=document.getElementById('cnum').value;
+		var str4=document.getElementById('cvv').value;
+		var str5=document.getElementById('edate1').value;
+		var str6=document.getElementById('edate2').value;
+		var str7=document.getElementById('cost').value;
+		if(str1 =="" || str2 =="")
+		{
+			alert("Please fill all the fields.");
+			return false;
+		}
+		else if(str3 == ""|| str4 == "") 
+		{
+			alert("Please fill all the fields.");
+			return false;
+		}
+		else if(str5 == ""|| str6 == "") 
+		{
+			alert("Please fill all the fields.");
+			return false;
+		}
+		else if(str7 =="")
+		{
+			alert("Please fill all the fields.");
+			return false;
+		}
+		else
+		{
+			return true;
+		}
 	}
-	else if((str4 == ""&& str5 == "") && (str6 == "" && str7 == ""))
-	{
-		alert("Please fill all the fields.");
-		return false;
-	}
-	else
-	{
-		return true;
-	}
-}
-	</script>
+</script>
 <body style="font-family:Arial;">
-<div id="admin" style="width:400px;height:400px;border:1px solid black;margin-top:125px;border-radius:10px;margin-left:420px;">
-<h3>Payment Portal</h3>
+<div id="admin" style="width:400px;height:400px;border:1px solid black;margin-top:125px;border-radius:10px;margin-left:420px;padding:30px;">
+<h2>Payment Portal</h2>
 <table>
 <form action="Mpay.php" method='post' onsubmit="return validate()">
 <tr><td>Card Holder Name:</td></tr>
@@ -69,6 +80,9 @@ function validate()
 <tr><td><input type="number" name="edate1" id="edate1" style="border:#FFFFFF;border-bottom: 2px solid #3F729B;"></td><td><input type="number" name="edate2" id="edate2" style="border:#FFFFFF;border-bottom: 2px solid #3F729B;"></td></tr>
 <tr><td>Cost:</td></tr>
 <tr><td><input type="text" style="border:#FFFFFF;border-bottom:2px solid #3F729B;" name="cost" id="cost" value="<?php include_once('Mbill.php');?>" readonly></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td><br></td></tr>
 <tr><td rowspan="3"><input type="submit" id="pay" value="Make Payment"></td><td rowspan="3"><input type="Reset" id="reset"></td></tr>
 </form>
 </table>

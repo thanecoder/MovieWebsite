@@ -52,7 +52,7 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<div style="color:white;margin-left:30px;font-family:Arial;">
+<div style="margin-left:40px;font-family:Arial;color:white;">
 Enter movie name : <input type="text" id="movies" placeholder="Search Movies..." size="30" name="box"/>
 <span id="span"></span>
 </div>

@@ -94,8 +94,8 @@
 </head>
 <body style="overflow-x:hidden;background-color:#1f1f1f">
 <?php
-include_once('Head.php');
-echo "<br><br>"; 
+include_once('MCHead.php');
+echo "<br><br><br><br>";	
 if(isset($_GET['page']))
 {
 	$page=$_GET['page'];
@@ -103,6 +103,12 @@ if(isset($_GET['page']))
 else
 {
 	$page=1;
+}
+if($page==1)
+{
+	echo "<br>";
+	include_once('Slider.php');
+	echo "<br>";
 }
 $servername="localhost";
 $username="root";
@@ -125,7 +131,7 @@ if($result==0)
 	{
 		die("Could not fetch the data" . mysql_error());
 	}
-	echo '<br><br><br><div style="float:left;width:1500px;height:20px;color:white;"><br>';
+	echo '<br><br><br><div style="margin-top:120px;float:left;width:1500px;height:20px;color:white;"><br>';
 while($row = mysql_fetch_array($result))
 	{
 	$n='UPLOADING/'.$row['p_name'].'.jpg';	
@@ -174,6 +180,7 @@ for($i=1;$i<=$total_pages;$i++)
 }
 if(($page)!=($total_pages))
 {echo "  <a id='page' href='Moviecatalogue.php?page=" . ($page+1) . "'><img src='next.png' align='middle' style='width:25px;height:25px;' /></a>  ";}
+include_once('Mfooter.php');
 ?>
 </div>
 

@@ -15,8 +15,8 @@ $result=mysqli_query($conn,$sql);
 while($row=mysqli_fetch_array($result))
 {
 echo "<video style='border:1px solid black;width:100%;height:100%;' controls autobuffer>
-<source src='UPLOADING/".$row['p_name'].".webm' type='video/webm' />
-<source src='UPLOADING/".$row['p_name'].".ogg' type='video/ogg' />
-<source src='UPLOADING/".$row['p_name'].".mp4' type='video/mp4' />
+<source src='".$row['p_name'].".webm' type='video/webm' />
+<source src='".$row['p_name'].".ogg' type='video/ogg' />
+<source src='".$row['p_name'].".mp4' type='video/mp4' />
 </video>";
 }

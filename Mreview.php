@@ -2,6 +2,7 @@
 $pid=$_GET['pid'];
 $uname=$_GET['uname'];
 $pname=$_GET['pname'];
+$ratings=$_GET['rating'];
 $review=$_GET['review'];
 $servername="localhost";
 $username="root";
@@ -11,14 +12,14 @@ if(!$conn)
 {
 die ("Connection failed:".mysqli_connect_error());
 }
-$sql="insert into review(uname,p_id,review) values('$uname',$pid,'$review')";
+$sql="insert into review(uname,p_id,review,ratings) values('$uname',$pid,'$review',$ratings)";
 if(mysqli_query($conn,$sql))
 {
 	echo "Review accepted <br>";
 }
 else
 {
-	echo mysqlI_error($conn);
+	echo mysqli_error($conn);
 }
 ?>
  

@@ -6,7 +6,7 @@
     border:none;
     display:inline-block;
 	text-align:center;
-    font-family:Arial;
+	font-family:Arial;
 	padding: 15px 32px;
 	text-decoration:none;
 }
@@ -28,6 +28,7 @@ $pid=$_GET["id"];
 $name=$_GET["name"];
 $cost=$_GET["cost"];
 $quant=$_GET["quantity"];
+$cost=$cost*$quant;
 $servername="localhost";
 $username="root";
 $password="";
@@ -36,7 +37,7 @@ if(!$conn)
 {
 die ("Connection failed:".mysqli_connect_error());
 }
-if(isset($_SESSION['user_id']))
+if(isset($_SESSION['user_status']))
 {
 	$id=$_SESSION['user_id'];
 	$name=addslashes($name);

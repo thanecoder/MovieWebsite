@@ -1,5 +1,6 @@
 <html>
 <head>
+<title>MovieShop-Register</title>
 <?php include_once("Head.php"); ?>
 <script>
 function confirm()
@@ -25,7 +26,7 @@ function validate1()
 	var str2=document.getElementById('email').value;
 	var str3=document.getElementById('cpass1').value;
 	var str4=document.getElementById('cpass2').value;
-	if(str1 == "" && str2 == "")
+	if(str1 =="" && str2 =="")
 	{
 		alert("Please fill all the fields.");
 		return false;
@@ -42,13 +43,13 @@ function validate1()
 }
 </script>
 <style>
-#login
+#registration
 {
+	box-shadow:3px 3px 3px grey;
 	margin-left:440px;
-	margin-top:100px;
+	margin-top:350px;
 	width:350px;
 	height:350px;
-	box-shadow:3px 3px 3px;
 	border:1 px solid black;
 }
 #submit
@@ -74,11 +75,18 @@ function validate1()
 	text-decoration:none;
 	font-family:Arial;
 }
+#name,#email,#cpass1,#cpass2{
+	background-color:#1f1f1f;
+	border:none;
+	border-bottom:1px solid grey;
+	color:white;
+	font-size:18px;
+}
 </style>
 </head>
-<body>
-<div  id="login" style="width:350px;height:350px;box-shadow:3px 3px 3px;border:1 px solid black;">
-<form method="post" action="Mregister.php">
+<body style="overflow-x:hidden;color:white;background-color:#1f1f1f;">
+<div  id="registration">
+<form method="post" action="Mregister.php" onsubmit="return validate1()">
 <table >
 <tr>REGISTRATION</tr>
 <tr><td>NAME:</td></tr>
@@ -88,9 +96,11 @@ function validate1()
 <tr><td>PASSWORD:</td></tr>
 <tr><td colspan="2"><input size="20" id="cpass1" name="cpass1" type="password"></tr></td>
 <tr><td>CONFIRM PASSWORD:</td></tr>
-<tr><td><input size="20" id="cpass2" type="password" onblur="confirm()"><td><span id="span1"></span></tr></td>
-<tr><td><input id="submit" type="submit" style="display:none;"></tr></td>
+<tr><td><input size="20" id="cpass2" type="password" onblur="confirm()"><td><span id="span1"></span></td></tr>
+<tr><td><input id="submit" type="submit" style="display:none;"></td></tr>
 </table>
 </form>
+<div style="clear:both;width:100%;height:200px;"></div>
+<?php include_once('Mfooter.php'); ?>
 </div>
 </body>

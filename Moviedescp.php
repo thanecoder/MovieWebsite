@@ -64,7 +64,7 @@ echo $row['p_name'];
 	height:500px;
 	border:none;
 	float:left;
-	margin-top:50px;
+	margin-top:300px;
 	font-family:Georgia;
 }
 #add
@@ -184,7 +184,7 @@ $row=mysqli_fetch_array($result);
 
 
 <div id="movie">
-<img id="poster" src="UPLOADING/<?php echo $row['p_name'] ; ?>.jpg" onclick="visible(this.id)" />
+<img id="poster" src="UPLOADING/<?php echo $row['p_name'] ; ?>.jpg" title="Click here to see trailer" onclick="visible(this.id)" />
 <div style="width:50px;height:350px;float:left;"></div>
 <div style="height:500px;margin-right:50px;color:white;">
 <input type="hidden" id="id" style="border:none;" value="<?php echo $row['p_id'] ; ?>" readonly />
@@ -213,9 +213,9 @@ $row=mysqli_fetch_array($result);
 ?>
 <div id="trailer" style="display:none;width:1300px;height:500px;float:left;">
 <video  style="width:1300px;height:500px;" controls autobuffer>
-<source src="UPLOADING/<?php echo $row['p_name'] ; ?> trailer.webm" type="video/webm" />
-<source src="UPLOADING/<?php echo $row['p_name'] ; ?> trailer.ogg" type="video/ogg" />
-<source src="UPLOADING/<?php echo $row['p_name'] ; ?> trailer.mp4" type="video/mp4" />
+<source src="<?php echo $row['p_name'] ; ?>.webm" type="video/webm" />
+<source src="<?php echo $row['p_name'] ; ?>.ogg" type="video/ogg" />
+<source src="<?php echo $row['p_name'] ; ?>.mp4" type="video/mp4" />
 </video>
 </div>
 
@@ -292,5 +292,7 @@ for($i=3;$i>=0;$i--)
 	}
 }
 ?>
+<div style="clear:both;width:100%;height:50px;"></div>
+<?php include_once('Mfooter.php'); ?>
 </div>
 </body>
