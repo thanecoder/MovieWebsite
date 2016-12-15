@@ -1,3 +1,4 @@
+<!--This file is for showing th user their playlist-->
 <title>MovieShop-Your Playlist</title>
 <style>
 #play
@@ -69,9 +70,11 @@ function link1()
 include_once("Head.php");
 @session_start();
 echo "<br><br><br>";
+//Check if user is logged in	
 if(isset($_SESSION['user_status']))
 {
 	$id=$_SESSION['user_id'];
+	//Database connection code
 	$servername="localhost";
 	$username="root";
 	$password="";
@@ -86,6 +89,7 @@ if(isset($_SESSION['user_status']))
 	$rowcount=mysqli_num_rows($result);
 	echo "<div style='background-color:#5B5EA6;color:white;font-size:2.2em;font-family:arial;width:100%;text-align:center;height:40px;margin-top:260px;'><b>YOUR PLAYLIST</b></div>";
 	echo "<div id='cartcent'>";
+	//Show the movies in playlist
 	if($rowcount>0)
 	{	for($count=0;$count<$rowcount;$count++)
 		{
