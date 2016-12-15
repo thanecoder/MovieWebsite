@@ -1,3 +1,4 @@
+<!--Code for letting user search the website-->
 <html>
 <head>
 <style>
@@ -32,15 +33,15 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	$("#movies").keyup(function(){
-	//onKeyUp function gets called for every keyup event on input having id as "car"
+	
 		
-		//ajax starts
+		//Ajax code starts
 		$.ajax({
-		  type: "POST",  //method
+		  type: "POST",  
 		
-		url: "movieautocomplete_ajax.php", //target file
+		url: "movieautocomplete_ajax.php", 
 
-		data: {movies: $("#movies").val()} //data need to be send 
+		data: {movies: $("#movies").val()} 
         
 		}).done(function( msg ){ 
 					//done methods gets called when ajax response is sent back by jQuery ajax.
