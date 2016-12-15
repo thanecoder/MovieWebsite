@@ -1,3 +1,4 @@
+<!-- This file is for the displaying of movie catalogue -->
 <head>
 <title>MovieShop</title>
 <style>
@@ -110,6 +111,7 @@ if($page==1)
 	include_once('Slider.php');
 	echo "<br>";
 }
+//Database connection.
 $servername="localhost";
 $username="root";
 $password="";
@@ -119,6 +121,7 @@ if(!$conn)
 die ("Connection failed:".mysqli_connect_error());
 }
 mysql_select_db('moviewebsite',$conn);
+//Pagination code starts here.
 $sql="select * from movie";
 $result=@mysqli_query($conn,$sql);
 $total_entries=@mysqli_num_rows($result);
