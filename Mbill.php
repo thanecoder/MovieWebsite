@@ -1,6 +1,9 @@
+
 <?php
+//This file has code for generating user bill
 @session_start();
 $id=$_SESSION['user_id'];
+//Database connection code
 $servername="localhost";
 $username="root";
 $password="";
