@@ -1,3 +1,4 @@
+<!--Code for storing product info in the database--> 
 <head>
 <style>
 #admin {
