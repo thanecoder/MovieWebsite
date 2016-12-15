@@ -230,6 +230,7 @@ $row=mysqli_fetch_array($result);
 <div style="color:black;font-family:Arial;font-size:1.3em;width:100%;height:40px;
 float:left;text-align:left;color:white;">Got Reviews! Write Them Below</div>
 <?php
+	//Show the user reviews.
 	echo "
     <table style='color:white;'>
 	<tr><td><input type='hidden' id='pid' value='".$row['p_id']."'></td></tr>
@@ -271,6 +272,7 @@ if(!$conn)
 {
 die ("Connection failed:".mysqli_connect_error());
 }
+//Show the links for similar genres movies.	
 $sql="select * from movie where p_id='$id'";
 $result=mysqli_query($conn,$sql);
 $row=@mysqli_fetch_array($result);
