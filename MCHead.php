@@ -1,3 +1,5 @@
+<!-- This file is for the header of home page of the MovieShop Website. -->
+
 <style>
 @keyframes bounceIn {
 	  0% 
