@@ -1,3 +1,4 @@
+<!-- This file is for the shopping cart. -->
 <title>MovieShop-Your Cart</title>
 <style>
 #login
