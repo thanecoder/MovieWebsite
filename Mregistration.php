@@ -1,7 +1,9 @@
+<!--This code is for registration form of user-->
 <html>
 <head>
 <title>MovieShop-Register</title>
 <?php include_once("Head.php"); ?>
+<!--JavaScript validation code starts here-->	
 <script>
 function confirm()
 {
@@ -87,14 +89,14 @@ function validate1()
 <body style="overflow-x:hidden;color:white;background-color:#1f1f1f;">
 <div  id="registration">
 <form method="post" action="Mregister.php" onsubmit="return validate1()">
-<table >
+<table>
 <tr>REGISTRATION</tr>
 <tr><td>NAME:</td></tr>
-<tr><td colspan="2"><input size="20" id="name" name="name" type="text"></tr></td>
+<tr><td colspan="2"><input size="20" id="name" name="name" type="text"></td></tr>
 <tr><td>E-MAIL ID:</td></tr>
-<tr><td colspan="2"><input size="20" id="email" name="email" type="email"></tr></td>
+<tr><td colspan="2"><input size="20" id="email" name="email" type="email"></td></tr>
 <tr><td>PASSWORD:</td></tr>
-<tr><td colspan="2"><input size="20" id="cpass1" name="cpass1" type="password"></tr></td>
+<tr><td colspan="2"><input size="20" id="cpass1" name="cpass1" type="password"></td></tr>
 <tr><td>CONFIRM PASSWORD:</td></tr>
 <tr><td><input size="20" id="cpass2" type="password" onblur="confirm()"><td><span id="span1"></span></td></tr>
 <tr><td><input id="submit" type="submit" style="display:none;"></td></tr>
