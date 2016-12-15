@@ -1,3 +1,4 @@
+<!--This file is for header of all pages except the homepage-->
 <style>
 @keyframes bounceIn {
 	  0% 
@@ -64,6 +65,7 @@ li a:hover
 <div style="float:right;width:100px:height:10px;color:white;">
 <?php 
 @session_start();
+//Check if user logged in and show the status	
 if(isset ($_SESSION['user_status']))
 {
 	echo '<img src="userlogged.png" align="middle" style="width:35px;height:35px;" />&nbsp<b>Welcome</b> '.$_SESSION['user_name'].'&nbsp&nbsp<br />';
