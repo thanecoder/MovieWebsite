@@ -1,3 +1,4 @@
+<!--Code for letting the admin add product to the website-->
 <head>
 <style>
 #admin 
