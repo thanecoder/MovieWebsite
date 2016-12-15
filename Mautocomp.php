@@ -44,9 +44,9 @@ $(document).ready(function(){
 		data: {movies: $("#movies").val()} 
         
 		}).done(function( msg ){ 
-					//done methods gets called when ajax response is sent back by jQuery ajax.
+					//done method gets called when ajax response is sent back by jQuery ajax.
 					// response is retrieved in variable "msg"
-		  $("#span").html(msg);  // Write the ajax response to span having id "span" 
+		  $("#span").html(msg);  
 		});	
 	});
 });
