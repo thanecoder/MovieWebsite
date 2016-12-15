@@ -1,9 +1,12 @@
+<!-- This file is for the description of each movie -->
+
 <html>
 <head>
 <title>
 MovieShop-
 <?php
 $id=@$_GET["id"];
+//Database connection code.	
 $servername="localhost";
 $username="root";
 $password="";
@@ -82,6 +85,7 @@ echo $row['p_name'];
 
 </style>
 <script>
+//Ajax code starts here.	
 http1=new XMLHttpRequest();
 http2=new XMLHttpRequest();
 function add()
@@ -121,6 +125,7 @@ function add1()
 	alert("Cannot submit review without your name or review.");
 	}
 }
+//Code for hiding and revealing details for similar movies.	
 function visible(id)
 {
 	if(id=='poster')
@@ -169,6 +174,7 @@ include_once("Head.php");
 include_once("Mautocomp.php");
 echo "<div style='width:1000px;height:50px;'></div>";
 $id=@$_GET["id"];
+//Database connection code.	
 $servername="localhost";
 $username="root";
 $password="";
@@ -181,7 +187,6 @@ $sql="select * from movie where p_id='$id'";
 $result=mysqli_query($conn,$sql);
 $row=mysqli_fetch_array($result);
 ?>
-
 
 <div id="movie">
 <img id="poster" src="UPLOADING/<?php echo $row['p_name'] ; ?>.jpg" title="Click here to see trailer" onclick="visible(this.id)" />
@@ -218,10 +223,6 @@ $row=mysqli_fetch_array($result);
 <source src="<?php echo $row['p_name'] ; ?>.mp4" type="video/mp4" />
 </video>
 </div>
-
-
-
-
 
 
 <div style="clear:both;width:100%;height:40px;float:left"></div>
