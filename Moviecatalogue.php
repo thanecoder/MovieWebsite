@@ -137,6 +137,7 @@ if($result==0)
 	echo '<br><br><br><div style="margin-top:120px;float:left;width:1500px;height:20px;color:white;"><br>';
 while($row = mysql_fetch_array($result))
 	{
+		//Link to each movie
 	$n='UPLOADING/'.$row['p_name'].'.jpg';	
 	echo "<img src='".$n."' style='float:left;width:230px;height:280px;box-shadow:5px 5px 5px white;'><div style='width:30px;height:280px;border:0px;float:left;'></div>
 	<div id='product'>NAME: ".$row['p_name']."<br><br>COST: Rs.".$row['price']."<br><br>GENRE: ".$row['genre']."<br><br>RATINGS: ".$row['ratings']."/5<br><br><br>
@@ -164,6 +165,7 @@ $con = @mysql_connect("localhost","root","");
 	mysql_select_db("moviewebsite");
 $sql="SELECT * FROM movie"; 
 $result=mysql_query($sql,$con);
+//Code for showing the page numbers
 $total_records =@mysql_num_rows($result);
 $total_pages = ceil($total_records / $num_per_page); 
 if($page!=1)
