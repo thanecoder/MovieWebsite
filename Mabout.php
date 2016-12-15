@@ -1,3 +1,4 @@
+<!--Just basic information about the developers of the website-->
 <html>
 	<head>
 	<style>
