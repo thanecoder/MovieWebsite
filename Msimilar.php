@@ -1,3 +1,4 @@
+<!--Code for selecting similar movies from the database-->
 <style>
 #descp
 {
