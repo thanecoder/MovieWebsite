@@ -1,3 +1,4 @@
+<!--This file does implements the add to cart feature-->
 <style>
 #login
 {
@@ -29,6 +30,7 @@ $name=$_GET["name"];
 $cost=$_GET["cost"];
 $quant=$_GET["quantity"];
 $cost=$cost*$quant;
+//Database Connection code
 $servername="localhost";
 $username="root";
 $password="";
@@ -37,6 +39,7 @@ if(!$conn)
 {
 die ("Connection failed:".mysqli_connect_error());
 }
+//Check if user logged in or not.
 if(isset($_SESSION['user_status']))
 {
 	$id=$_SESSION['user_id'];
