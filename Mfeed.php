@@ -1,4 +1,5 @@
 <?php
+// Code for storing feedback of users 
 	$name=$_POST['name'];
 	$email=$_POST['email'];
 	$comment=$_POST['comment'];
